@@ -11,7 +11,7 @@ export function Navigation(props: INavigationProps): JSX.Element {
   const isOnLanding = PagePath.Home === pathname;
 
   return (
-    <nav className={classNames(styles.navigationWrapper)}>
+    <nav className={classNames(styles.navigationWrapper, { [styles.offHome]: !isOnLanding })}>
       <div className={classNames('wrapper', styles.navigationInner)}>
         <div className={styles.navigationLogo}>
           <NavLink to={PagePath.Home}>

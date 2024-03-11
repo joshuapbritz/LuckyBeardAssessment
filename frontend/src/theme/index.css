@@ -22,3 +22,14 @@ body {
   margin: auto;
 }
 
+.headerContent {
+  max-width: 885px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.headerContent p {
+  max-width: 585px;
+  margin: 25px auto;
+}
+

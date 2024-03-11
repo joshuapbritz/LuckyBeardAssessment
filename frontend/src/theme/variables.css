@@ -9,5 +9,6 @@
   --dark_5: #e9ebef;
 
   --overlay: hsla(0, 0%, 0%, 0.4);
+  --shadow: hsla(0, 0%, 0%, 0.25)
 }
 

@@ -5,7 +5,7 @@
   padding-bottom: 300px;
 }
 
-.header img {
+.header img.headerBackground {
   position: absolute;
   left: 0;
   top: 0;
@@ -17,16 +17,28 @@
 }
 
 .header .headerContent {
-  max-width: 885px;
   position: relative;
   z-index: 4;
-  margin: 0 auto;
-  text-align: center;
 }
 
-.header .headerContent p {
-  max-width: 585px;
-  margin: auto;
+.header .headerContent .headerButtons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: auto;
+  gap: 12px;
+}
+
+.header .headerContent .headerButtons a {
+  display: block;
+  height: 42px;
+  width: auto;
+}
+
+.header .headerContent .headerButtons a img {
+  display: block;
+  height: 100%;
+  width: auto;
 }
 
 .header .headerCircles {
@@ -36,18 +48,6 @@
   z-index: 5;
   left: 0;
   bottom: 0;
-}
-
-.header .headerCircles::after {
-  content: '';
-  display: block;
-  width: 100%;
-  height: 50px;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  background-color: var(--primary);
-  z-index: 1;
 }
 
 .header .headerCircles svg.headerCircle {

@@ -17,14 +17,19 @@ p.dark {
 h1 {
   font-size: 3.875rem;
   font-weight: 600;
+  line-height: 105%;
+  letter-spacing: -1.86px;
 }
 
 h2 {
-  font-size: 3.625rem;
+  font-size: 2.625rem;
   font-weight: 600;
+  line-height: 105%;
+  letter-spacing: -1.26px;
 }
 
 p {
   font-size: 1rem;
+  line-height: 140%;
 }
 

@@ -1,20 +1,31 @@
 import React from 'react';
 import styles from './home.module.css';
 import { ScrollArrow } from '../../components/scroll-arrow/scroll-arrow';
+import classNames from 'classnames';
 
 export function HomePage(): JSX.Element {
   return (
     <React.Fragment>
       <header className={styles.header}>
-        <img src="/header.jpeg" alt="" />
+        <img className={styles.headerBackground} src="/header.jpeg" aria-hidden alt="" />
 
-        <div className={styles.headerContent}>
+        <div className={classNames(styles.headerContent, 'headerContent')}>
           <h1>A new era for test-drives</h1>
           <p>Enhanced test drive experience through the connection of people in a secure, scheduled and convenient manner to ensure the seamless buying and selling of new and used vehicles.</p>
+
+          <div className={styles.headerButtons}>
+            <a href="https://www.apple.com/app-store" target="_blank" rel="noopener noreferrer">
+              <img src="/apple.png" alt="App Store" />
+            </a>
+
+            <a href="https://play.google.com" target="_blank" rel="noopener noreferrer">
+              <img src="/play.png" alt="Play Store" />
+            </a>
+          </div>
         </div>
 
         <div className={styles.headerCircles}>
-          {/* <ScrollArrow /> */}
+          <ScrollArrow />
 
           {/* Blue Circle */}
           <svg preserveAspectRatio="none" fill="none" viewBox="0 0 1920 273" className={styles.headerCircle}>
@@ -45,7 +56,4 @@ export function HomePage(): JSX.Element {
     </React.Fragment>
   );
 }
-
-
-
 

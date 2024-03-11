@@ -1,0 +1,30 @@
+.formControl {
+  display: block;
+  width: 100%;
+  padding-bottom: 85px;
+}
+
+.formControl:last-child {
+  padding-bottom: 0;
+}
+
+.formButton {
+  appearance: none;
+  border: none;
+  display: block;
+  width: 100%;
+  background-color: var(--primary);
+  line-height: 115px;
+  color: var(--headings);
+  font-weight: 700;
+  font-size: 1.82rem;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.formButton[disabled],
+.formButton.disabled {
+  background-color: var(--dark_5);
+  cursor: not-allowed;
+}
+

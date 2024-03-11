@@ -4,6 +4,7 @@ import ReactDOM from 'react-dom/client';
 import './theme/variables.css';
 import './theme/typography.css';
 import './theme/index.css';
+import './theme/forms.css';
 
 import App from './App';
 import reportWebVitals from './reportWebVitals';

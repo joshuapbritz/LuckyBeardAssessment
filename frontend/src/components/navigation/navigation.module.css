@@ -14,10 +14,11 @@
   justify-content: space-between;
 }
 
-.navigationWrapper .navigationLogo {
+.navigationWrapper .navigationInner .navigationLogo {
   width: 48px;
   height: 48px;
   position: relative;
+  filter: invert(100%);
 }
 
 .navigationWrapper .navigationInner .navigationLogo a {
@@ -63,5 +64,9 @@
   padding: 0 20px;
   background-color: var(--primary);
   border-radius: 10px;
+}
+
+.navigationWrapper.offHome .navigationInner .navigationLogo {
+  filter: unset;
 }
 
