@@ -12,19 +12,19 @@ export function Navigation(props: INavigationProps): JSX.Element {
 
   return (
     <nav className={classNames(styles.navigationWrapper)}>
-      <div className="wrapper">
-        <div className="logo">
+      <div className={classNames('wrapper', styles.navigationInner)}>
+        <div className={styles.navigationLogo}>
           <NavLink to={PagePath.Home}>
             <img src="/logo.png" alt="Logo" />
           </NavLink>
         </div>
 
-        <ul className="navigationLinks">
-          <li className="navigationLink">{isOnLanding ? <span>For buyer</span> : <NavLink to={`${PagePath.Home}?linkTo=forBuyer`}>For buyer</NavLink>}</li>
+        <ul className={styles.navigationLinks}>
+          <li className={styles.navigationLink}>{isOnLanding ? <span>For buyer</span> : <NavLink to={`${PagePath.Home}?linkTo=forBuyer`}>For buyer</NavLink>}</li>
 
-          <li className="navigationLink">{isOnLanding ? <span>For seller</span> : <NavLink to={`${PagePath.Home}?linkTo=forSeller`}>For seller</NavLink>}</li>
+          <li className={styles.navigationLink}>{isOnLanding ? <span>For seller</span> : <NavLink to={`${PagePath.Home}?linkTo=forSeller`}>For seller</NavLink>}</li>
 
-          <li className="navigationLink">
+          <li className={classNames(styles.navigationLink, styles.navigationButton)}>
             <NavLink to={PagePath.RequestDemo}>Request a demo</NavLink>
           </li>
         </ul>

@@ -1,0 +1,88 @@
+.header {
+  position: relative;
+  overflow: hidden;
+  padding-top: 340px;
+  padding-bottom: 300px;
+}
+
+.header img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: rotateY(180deg);
+}
+
+.header .headerContent {
+  max-width: 885px;
+  position: relative;
+  z-index: 4;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.header .headerContent p {
+  max-width: 585px;
+  margin: auto;
+}
+
+.header .headerCircles {
+  height: 250px;
+  width: 100%;
+  position: absolute;
+  z-index: 5;
+  left: 0;
+  bottom: 0;
+}
+
+.header .headerCircles::after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 50px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-color: var(--primary);
+  z-index: 1;
+}
+
+.header .headerCircles svg.headerCircle {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.header .headerCircles svg.headerCircle:nth-child(1) {
+  z-index: 4;
+}
+
+.header .headerCircles svg.headerCircle:nth-child(2) {
+  z-index: 3;
+}
+
+.header .headerCircles svg.headerCircle:nth-child(3) {
+  z-index: 2;
+}
+
+.header::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: var(--overlay);
+  left: 0;
+  top: 0;
+  z-index: 2;
+}
+
+.homeContentWrapper {
+  padding: 70px 0;
+  background-color: var(--primary);
+}
+

@@ -7,5 +7,7 @@
   --dark_2: #6f7889;
   --dark_4: #d4d7dd;
   --dark_5: #e9ebef;
+
+  --overlay: hsla(0, 0%, 0%, 0.4);
 }
 
