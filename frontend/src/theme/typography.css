@@ -1,0 +1,30 @@
+h1,
+h2,
+p {
+  display: block;
+  margin: 0;
+  color: var(--headings);
+}
+
+h1.dark,
+h2.dark,
+p.dark {
+  display: block;
+  margin: 0;
+  color: var(--dark_1);
+}
+
+h1 {
+  font-size: 3.875rem;
+  font-weight: 600;
+}
+
+h2 {
+  font-size: 3.625rem;
+  font-weight: 600;
+}
+
+p {
+  font-size: 1rem;
+}
+
