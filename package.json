@@ -1,0 +1,6 @@
+{
+    "name": "the-lucky-project",
+    "scripts": {
+        "start": "bash ./scripts/bootup.bash"
+    }
+}
