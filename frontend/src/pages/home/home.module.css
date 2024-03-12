@@ -82,7 +82,170 @@
 }
 
 .homeContentWrapper {
-  padding: 70px 0;
   background-color: var(--primary);
+  position: relative;
+  padding-bottom: 140px;
+}
+
+.homeContentWrapper .homeContentInfoContainer {
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+.homeContentWrapper .homeContentInfoContainer .homeContentInfoRow {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 140px;
+  margin-bottom: 90px;
+}
+
+.homeContentWrapper .homeContentInfoContainer .homeContentInfoRow .homeContentInfoColumn {
+  flex: 1;
+}
+
+.homeContentWrapper .homeContentInfoContainer .homeContentInfoRow .homeContentInfoColumn h2 {
+  padding-top: 70px;
+}
+
+.homeContentWrapper .homeContentInfoContainer .homeContentInfoRow .homeContentInfoColumn p {
+  max-width: 458px;
+  margin: 25px 0;
+}
+
+.homeContentWrapper .homeContentInfoContainer .homeContentInfoRow .homeContentInfoColumn ul {
+  list-style: none;
+  display: block;
+  width: 100%;
+  padding: 25px 0;
+  margin: 0;
+  max-width: 395px;
+}
+
+.homeContentWrapper .homeContentInfoContainer .homeContentInfoRow .homeContentInfoColumn ul li {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+
+.homeContentWrapper .homeContentInfoContainer .homeContentInfoRow .homeContentInfoColumn ul li:last-child {
+  margin-bottom: 0;
+}
+
+.homeContentWrapper .homeContentInfoContainer .homeContentInfoRow .homeContentInfoColumn ul li .icon {
+  padding: 0 12px;
+}
+
+.homeContentWrapper .homeContentInfoContainer .homeContentInfoRow .homeContentInfoColumn ul li .label {
+  font-size: 1rem;
+  line-height: 140%;
+  font-weight: 400;
+  color: var(--headings);
+  padding-left: 15px;
+}
+
+.homeContentWrapper .homeContentInfoContainer .homeContentInfoRow .homeContentInfoColumn.homeContentInfoImageColumn {
+  border-radius: 0px 0px 60px 60px;
+  background: linear-gradient(180deg, var(--primary) 0%, var(--dark_1) 100%);
+}
+
+.homeContentWrapper .homeContentInfoContainer .homeContentInfoRow .homeContentInfoColumn.homeContentInfoImageColumn img {
+  height: 100%;
+  width: auto;
+  display: block;
+  margin: auto;
+}
+
+.homeContentWrapper .homeContentInfoBridge {
+  position: absolute;
+  width: 100%;
+  height: auto;
+  bottom: 0;
+  left: 0;
+  transform: translateY(100%);
+  z-index: 5;
+}
+
+.sellerCardsWrapper {
+  width: 100%;
+  height: auto;
+  background: url(../../assets/footer.jpeg);
+  background-size: cover;
+  padding-top: 150px;
+  padding-bottom: 450px;
+  position: relative;
+}
+
+.sellerCardsWrapper::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: var(--overlay);
+  left: 0;
+  top: 0;
+  z-index: 2;
+}
+
+.sellerCardsWrapper .sellerCardsInnerContent {
+  position: relative;
+  z-index: 3;
+}
+
+.sellerCardsWrapper .sellerCardsInnerContent h1,
+.sellerCardsWrapper .sellerCardsInnerContent p {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.sellerCardsWrapper .sellerCardsInnerContent h1 {
+  max-width: 880px;
+  margin-bottom: 20px;
+}
+
+.sellerCardsWrapper .sellerCardsInnerContent p {
+  max-width: 580px;
+  margin-bottom: 20px;
+}
+
+.sellerCardsWrapper .sellerCardsInnerContent .sellerCardsList {
+  max-width: 1080px;
+  margin: auto;
+  padding: 0;
+  display: grid;
+  align-items: flex-start;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 10px;
+  list-style: none;
+}
+
+.sellerCardsWrapper .sellerCardsInnerContent .sellerCardsList .sellerCardsListItem {
+  background-color: var(--background);
+  border-radius: 10px;
+  padding: 17px;
+}
+
+.sellerCardsWrapper .sellerCardsInnerContent .sellerCardsList .sellerCardsListItem .sellerCardsListIcon {
+  width: 22px;
+  height: auto;
+}
+
+.sellerCardsWrapper .sellerCardsInnerContent .sellerCardsList .sellerCardsListItem .sellerCardsListIcon img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.sellerCardsWrapper .sellerCardsInnerContent .sellerCardsList .sellerCardsListItem .sellerCardsListContent h4 {
+  margin: 17px 0 6px 0;
+}
+
+
+.sellerCardsWrapper .sellerCardsInnerContent .sellerCardsList .sellerCardsListItem .sellerCardsListContent span {
+  font-size: 13px;
+  color: var(--dark_1);
+  line-height: 1.4;
+  display: block;
 }
 

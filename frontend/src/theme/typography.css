@@ -1,6 +1,7 @@
 h1,
 h2,
-p {
+p,
+h4 {
   display: block;
   margin: 0;
   color: var(--headings);
@@ -9,8 +10,6 @@ p {
 h1.dark,
 h2.dark,
 p.dark {
-  display: block;
-  margin: 0;
   color: var(--dark_1);
 }
 
@@ -26,6 +25,13 @@ h2 {
   font-weight: 600;
   line-height: 105%;
   letter-spacing: -1.26px;
+}
+
+h4 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: var(--dark_1);
 }
 
 p {

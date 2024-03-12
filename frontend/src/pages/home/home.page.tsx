@@ -2,6 +2,10 @@ import React from 'react';
 import styles from './home.module.css';
 import { ScrollArrow } from '../../components/scroll-arrow/scroll-arrow';
 import classNames from 'classnames';
+import iphone1 from '../../assets/iphone1.png';
+import iphone2 from '../../assets/iphone2.png';
+import point from '../../assets/point.svg';
+import pointBlue from '../../assets/point_blue.svg';
 
 export function HomePage(): JSX.Element {
   return (
@@ -52,11 +56,180 @@ export function HomePage(): JSX.Element {
         </div>
       </header>
 
-      <article className={styles.homeContentWrapper}></article>
+      <div id="forBuyer" />
+      <section className={styles.homeContentWrapper}>
+        <div className={styles.homeContentInfoContainer}>
+          <div className={styles.homeContentInfoRow}>
+            <div className={classNames(styles.homeContentInfoColumn, styles.homeContentInfoImageColumn)}>
+              <img src={iphone1} alt="" />
+            </div>
 
-      <div id="forBuyer"></div>
-      <div id="forSeller"></div>
+            <div className={styles.homeContentInfoColumn}>
+              <h2>Search for the car of your dreams and test drive it</h2>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eu sed malesuada habitant odio eu etiam proin odio habitant. Elit felis aliquam suspendisse amet nunc. Erat.</p>
+
+              <ul>
+                <li>
+                  <div className={styles.icon}>
+                    <img src={point} alt="" />
+                  </div>
+
+                  <div className={styles.label}>Multiple filtering options</div>
+                </li>
+
+                <li>
+                  <div className={styles.icon}>
+                    <img src={point} alt="" />
+                  </div>
+
+                  <div className={styles.label}>Test drives with both private sellers or dealerships</div>
+                </li>
+
+                <li>
+                  <div className={styles.icon}>
+                    <img src={point} alt="" />
+                  </div>
+
+                  <div className={styles.label}>Take pictures and notes during test drive</div>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div className={styles.homeContentInfoRow}>
+            <div className={styles.homeContentInfoColumn}>
+              <h2>Only real people</h2>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eu sed malesuada habitant odio eu etiam proin odio habitant. Elit felis aliquam suspendisse amet nunc. Erat.</p>
+
+              <ul>
+                <li>
+                  <div className={styles.icon}>
+                    <img src={point} alt="" />
+                  </div>
+
+                  <div className={styles.label}>Secure and verified registration</div>
+                </li>
+
+                <li>
+                  <div className={styles.icon}>
+                    <img src={point} alt="" />
+                  </div>
+
+                  <div className={styles.label}>Direct messaging with the seller</div>
+                </li>
+
+                <li>
+                  <div className={styles.icon}>
+                    <img src={point} alt="" />
+                  </div>
+
+                  <div className={styles.label}>Instant armed response if something goes wrong</div>
+                </li>
+              </ul>
+            </div>
+
+            <div className={classNames(styles.homeContentInfoColumn, styles.homeContentInfoImageColumn)}>
+              <img src={iphone2} alt="" />
+            </div>
+          </div>
+        </div>
+
+        <div className={styles.homeContentInfoBridge}>
+          <svg preserveAspectRatio="none" viewBox="0 0 1920 261" fill="none">
+            <path d="M1920 260.971V0H959.5H0L0 260.15C189.486 104.803 548.19 0 959.5 0C1371.54 0 1730.78 105.173 1920 260.971Z" fill="var(--primary)" />
+          </svg>
+        </div>
+      </section>
+
+      <div id="forSeller" />
+      <section className={styles.sellerCardsWrapper}>
+        <div className={styles.sellerCardsInnerContent}>
+          <h1>
+            Private seller?
+            <br />
+            We got your back
+          </h1>
+
+          <p>Want to sell your current car? Put it on Dealr, schedule appointments and take advantage of our integrated financing engine.</p>
+
+          <ul className={styles.sellerCardsList}>
+            <li className={styles.sellerCardsListItem}>
+              <div className={styles.sellerCardsListIcon}>
+                <img src={pointBlue} alt="" />
+              </div>
+
+              <div className={styles.sellerCardsListContent}>
+                <h4>verified buyers</h4>
+                <span>Secure and verified registration</span>
+              </div>
+            </li>
+
+            <li className={styles.sellerCardsListItem}>
+              <div className={styles.sellerCardsListIcon}>
+                <img src={pointBlue} alt="" />
+              </div>
+
+              <div className={styles.sellerCardsListContent}>
+                <h4>no time wasters</h4>
+                <span>Buyers undergo a credit check before to be able to book a test drive</span>
+              </div>
+            </li>
+
+            <li className={styles.sellerCardsListItem}>
+              <div className={styles.sellerCardsListIcon}>
+                <img src={pointBlue} alt="" />
+              </div>
+
+              <div className={styles.sellerCardsListContent}>
+                <h4>scheduling</h4>
+                <span>Set test drive scheduling</span>
+              </div>
+            </li>
+
+            <li className={styles.sellerCardsListItem}>
+              <div className={styles.sellerCardsListIcon}>
+                <img src={pointBlue} alt="" />
+              </div>
+
+              <div className={styles.sellerCardsListContent}>
+                <h4>easy upload</h4>
+                <span>Add a car ad in minutes via our extensive database of car models</span>
+              </div>
+            </li>
+
+            <li className={styles.sellerCardsListItem}>
+              <div className={styles.sellerCardsListIcon}>
+                <img src={pointBlue} alt="" />
+              </div>
+
+              <div className={styles.sellerCardsListContent}>
+                <h4>geo-located</h4>
+                <span>Notifications to Geo-located opportunities</span>
+              </div>
+            </li>
+
+            <li className={styles.sellerCardsListItem}>
+              <div className={styles.sellerCardsListIcon}>
+                <img src={pointBlue} alt="" />
+              </div>
+
+              <div className={styles.sellerCardsListContent}>
+                <h4>Chat in a tap</h4>
+                <span>Direct messaging with buyer</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
     </React.Fragment>
   );
 }
+
+
+
+
+
+
+
+
 
