@@ -41,6 +41,15 @@
   padding: 118px 100px 95px 100px;
 }
 
+.requestPageContent .requestPageFormWrapper.requestPageFormSuccessWrapper {
+  text-align: center;
+}
+
+.requestPageContent .requestPageFormWrapper.requestPageFormSuccessWrapper h2 {
+  margin-bottom: 0;
+  color: var(--dark_2);
+}
+
 .requestPageContent .requestPageFormWrapper h2 {
   margin-bottom: 95px;
 }
@@ -95,5 +104,29 @@
   height: 140px;
   width: 100%;
   background: var(--dark_1);
+}
+
+.checkmark {
+  width: 180px;
+  height: 180px;
+  background-color: var(--success);
+  border-radius: 100px;
+  padding: 25px;
+  margin: -20px auto 35px auto;
+}
+
+@media screen and (max-width: 720px) {
+  .checkmark {
+    margin-top: 0;
+  }
+}
+
+.checkmark svg {
+  width: 100%;
+  height: 100%;
+}
+
+.checkmark svg path {
+  fill: var(--background);
 }
 

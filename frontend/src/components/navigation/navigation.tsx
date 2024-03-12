@@ -14,7 +14,7 @@ export function Navigation(props: INavigationProps): JSX.Element {
     const element = document.getElementById(id);
 
     window.requestIdleCallback(() => {
-      element?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      element?.scrollIntoView({ behavior: 'smooth', block: 'start' });
     });
   }
 

@@ -11,7 +11,7 @@ export function ScrollArrow(): JSX.Element {
     >
       <svg fill="none" viewBox="0 0 50 50">
         <circle cx="25" cy="25" r="25" fill="var(--dark_1)" />
-        <circle cx="25" cy="25" r="25" fill="url(#a)" fill-opacity=".2" />
+        <circle cx="25" cy="25" r="25" fill="url(#a)" fillOpacity=".2" />
 
         <path stroke="var(--primary)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="6" d="M25 12v24" />
         <path stroke="var(--background)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="6" d="m13 25.02 12.02 12.021 12.022-12.02" />
