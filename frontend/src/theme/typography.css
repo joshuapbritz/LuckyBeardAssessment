@@ -1,7 +1,8 @@
 h1,
 h2,
-p,
-h4 {
+h4,
+h5,
+p {
   display: block;
   margin: 0;
   color: var(--headings);
@@ -42,6 +43,13 @@ h4 {
   font-weight: 400;
   font-style: normal;
   color: var(--dark_1);
+}
+
+h5 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  font-style: normal;
+  color: var(--dark_2);
 }
 
 p {

@@ -15,7 +15,7 @@ router.post('/', async (req, res) => {
   const contactLead = req.body as IContactForm;
   const populated = verifyContactForm(contactLead);
 
-  if (!populated) res.status(500).json(new IErrorResponse(`Lead has missing values`, 500));
+  if (!populated) return res.status(500).json(new IErrorResponse(`Lead has missing values`, 500));
 
   const data = {
     from: 'Joshua Britz <joshuabritz@gmail.com>',
@@ -62,6 +62,4 @@ router.get('/articles', async (req, res) => {
 });
 
 export default router;
-
-
 

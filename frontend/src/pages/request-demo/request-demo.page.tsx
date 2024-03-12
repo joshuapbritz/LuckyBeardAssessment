@@ -6,10 +6,11 @@ import { request, IErrorResponse } from '../../library/api';
 import { useForm, Controller } from 'react-hook-form';
 import { Skeleton } from '../../components/skeleton/skeleton';
 import { emailRGX, phoneRGX } from './request-demo.helpers';
+import { Toast } from '../../components/toast/toast';
 
 export function RequestDemoPage(): JSX.Element {
   const { control, handleSubmit, formState } = useForm({ mode: 'onBlur', reValidateMode: 'onBlur' });
-  const [submissionStatus, setSubmissionStatus] = useState<{ isSubmitting: boolean; isSubmitted: boolean }>({ isSubmitted: false, isSubmitting: false });
+  const [submissionStatus, setSubmissionStatus] = useState<{ isSubmitting: boolean; isSubmitted: boolean; hasSubmissionError: boolean }>({ isSubmitted: false, isSubmitting: false, hasSubmissionError: false });
   const [articleData, setArticleData] = useState<{ isLoading: boolean; data?: IArticle[]; error?: string }>({ isLoading: true });
 
   useEffect(() => {
@@ -21,17 +22,15 @@ export function RequestDemoPage(): JSX.Element {
   }, []);
 
   async function requestDemo(body: IContactForm) {
-    setSubmissionStatus({ isSubmitting: true, isSubmitted: false });
+    setSubmissionStatus({ isSubmitting: true, isSubmitted: false, hasSubmissionError: false });
 
     const response = await request<IContactForm>(`${process.env.REACT_APP_API_URL}contact`, { method: 'POST', body });
 
     if (response instanceof IErrorResponse || !response) {
-      setSubmissionStatus({ isSubmitting: false, isSubmitted: false });
-    } else if (!!response) {
-      setSubmissionStatus({ isSubmitting: false, isSubmitted: true });
+      setSubmissionStatus({ isSubmitting: false, isSubmitted: false, hasSubmissionError: true });
+    } else {
+      setSubmissionStatus({ isSubmitting: false, isSubmitted: true, hasSubmissionError: false });
     }
-
-    setSubmissionStatus({ isSubmitting: false, isSubmitted: true });
   }
 
   return (
@@ -42,7 +41,6 @@ export function RequestDemoPage(): JSX.Element {
           <p>If you are a professional, we offer a desktop admin platform, to allow a better and faster management of your whole business</p>
         </div>
       </header>
-
       <article className={classNames('wrapper', styles.requestPageContent)}>
         {!submissionStatus.isSubmitted && (
           <form className={classNames(styles.requestPageFormWrapper)} onSubmit={handleSubmit((values: any) => requestDemo(values))}>
@@ -268,6 +266,8 @@ export function RequestDemoPage(): JSX.Element {
           </div>
         )}
       </article>
+
+      <Toast active={submissionStatus.hasSubmissionError} title="Something went wrong" message="We weren't able to submit your request. Please try again later" theme="error" onClose={() => setSubmissionStatus({ ...submissionStatus, hasSubmissionError: false })} />
 
       <div className={styles.blackBar} />
     </div>
