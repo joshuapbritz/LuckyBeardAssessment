@@ -8,12 +8,12 @@ import { Skeleton } from '../../components/skeleton/skeleton';
 import { emailRGX, phoneRGX } from './request-demo.helpers';
 
 export function RequestDemoPage(): JSX.Element {
-  const { control, handleSubmit, formState, reset } = useForm({ mode: 'onBlur', reValidateMode: 'onBlur' });
+  const { control, handleSubmit, formState } = useForm({ mode: 'onBlur', reValidateMode: 'onBlur' });
   const [submissionStatus, setSubmissionStatus] = useState<{ isSubmitting: boolean; isSubmitted: boolean }>({ isSubmitted: false, isSubmitting: false });
   const [articleData, setArticleData] = useState<{ isLoading: boolean; data?: IArticle[]; error?: string }>({ isLoading: true });
 
   useEffect(() => {
-    request<IArticle[]>(`http://localhost:3030/contact/articles`).then(articles => {
+    request<IArticle[]>(`${process.env.API_URL}contact/articles`).then(articles => {
       if (articles instanceof IErrorResponse || !articles) {
         setArticleData({ isLoading: false, error: `Couldn't load articles` });
       } else setArticleData({ isLoading: false, data: articles });
@@ -23,7 +23,7 @@ export function RequestDemoPage(): JSX.Element {
   async function requestDemo(body: IContactForm) {
     setSubmissionStatus({ isSubmitting: true, isSubmitted: false });
 
-    const response = await request<IContactForm>(`http://localhost:3030/contact`, { method: 'POST', body });
+    const response = await request<IContactForm>(`${process.env.API_URL}contact`, { method: 'POST', body });
 
     if (response instanceof IErrorResponse || !response) {
       setSubmissionStatus({ isSubmitting: false, isSubmitted: false });
@@ -273,4 +273,6 @@ export function RequestDemoPage(): JSX.Element {
     </div>
   );
 }
+
+
 
