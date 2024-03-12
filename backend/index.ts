@@ -16,7 +16,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 app.get('/', (req: Request, res: Response) => {
-  res.send('Express + TypeScript Server');
+  res.send('The Lucky API');
 });
 
 app.use('/contact', contactRoutes);
@@ -24,6 +24,4 @@ app.use('/contact', contactRoutes);
 app.listen(port, () => {
   console.log(`[server]: Server is running at http://localhost:${port}`);
 });
-
-
 
