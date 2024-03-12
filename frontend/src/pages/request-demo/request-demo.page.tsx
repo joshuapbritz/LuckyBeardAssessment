@@ -5,6 +5,7 @@ import { IArticle, IContactForm } from './request-demo.models';
 import { request, IErrorResponse } from '../../library/api';
 import { useForm, Controller } from 'react-hook-form';
 import { Skeleton } from '../../components/skeleton/skeleton';
+import { emailRGX, phoneRGX } from './request-demo.helpers';
 
 export function RequestDemoPage(): JSX.Element {
   const { control, handleSubmit, formState, reset } = useForm({ mode: 'onBlur', reValidateMode: 'onBlur' });
@@ -51,7 +52,18 @@ export function RequestDemoPage(): JSX.Element {
               <Controller
                 name="name"
                 control={control}
-                rules={{ required: 'Please enter your name' }}
+                rules={{
+                  required: 'Please enter your name',
+                  maxLength: {
+                    value: 50,
+                    message: 'Cannot enter more than 50 characters',
+                  },
+                  validate: {
+                    alpha: (value: string) => {
+                      return !!value.match(/^[a-zA-Z\s]*$/gi) || 'Please only use letters and spaces';
+                    },
+                  },
+                }}
                 render={({ field, fieldState }) => {
                   const hasError = !!fieldState.error;
                   const errorMessage = fieldState.error?.message;
@@ -74,7 +86,18 @@ export function RequestDemoPage(): JSX.Element {
               <Controller
                 name="email"
                 control={control}
-                rules={{ required: 'Please enter your email' }}
+                rules={{
+                  required: 'Please enter your email',
+                  maxLength: {
+                    value: 50,
+                    message: `Email cannot be more than 50 characters`,
+                  },
+                  validate: {
+                    emailValid: (value: string) => {
+                      return !!value.match(emailRGX) || `Please enter a valid email`;
+                    },
+                  },
+                }}
                 render={({ field, fieldState }) => {
                   const hasError = !!fieldState.error;
                   const errorMessage = fieldState.error?.message;
@@ -97,7 +120,18 @@ export function RequestDemoPage(): JSX.Element {
               <Controller
                 name="phoneNumber"
                 control={control}
-                rules={{ required: 'Please enter a phone number' }}
+                rules={{
+                  required: 'Please enter a phone number',
+                  maxLength: {
+                    value: 13,
+                    message: `Phone number cannot contain more that 13 digits`,
+                  },
+                  validate: {
+                    validPhone: (value: string) => {
+                      return !!value.match(phoneRGX) || `Please enter a valid phone number`;
+                    },
+                  },
+                }}
                 render={({ field, fieldState }) => {
                   const hasError = !!fieldState.error;
                   const errorMessage = fieldState.error?.message;
@@ -120,7 +154,13 @@ export function RequestDemoPage(): JSX.Element {
               <Controller
                 name="company"
                 control={control}
-                rules={{ required: 'Please enter your company' }}
+                rules={{
+                  required: 'Please enter your company',
+                  maxLength: {
+                    value: 50,
+                    message: 'Cannot enter more than 50 characters',
+                  },
+                }}
                 render={({ field, fieldState }) => {
                   const hasError = !!fieldState.error;
                   const errorMessage = fieldState.error?.message;
