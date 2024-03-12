@@ -6,6 +6,7 @@ import { IContactForm } from '../models/contact-form';
 import { verifyContactForm } from '../library/verify-contact-form';
 import mailgun from 'mailgun-js';
 import dotenv from 'dotenv';
+import { prettify } from '../library/strings';
 
 dotenv.config();
 
@@ -23,10 +24,11 @@ router.post('/', async (req, res) => {
     subject: 'New Dealr Demo Request (Joshua Britz)',
     html: `
     <h1>New Dealr Demo Request</h1>
+    
     <ul>
       ${Object.entries(contactLead)
         .map(([name, value]) => {
-          return `<li>${name}: ${value}</li>`;
+          return `<li><strong>${prettify(name)}</strong>: ${value}</li>`;
         })
         .join('\n')}
     </ul>`,
