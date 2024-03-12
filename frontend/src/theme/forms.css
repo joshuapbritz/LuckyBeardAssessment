@@ -4,6 +4,12 @@
   padding-bottom: 85px;
 }
 
+@media screen and (max-width: 720px) {
+  .formControl {
+    padding-bottom: 45px;
+  }
+}
+
 .formControl:last-child {
   padding-bottom: 0;
 }
@@ -20,6 +26,12 @@
   font-size: 1.82rem;
   border-radius: 20px;
   cursor: pointer;
+}
+
+@media screen and (max-width: 720px) {
+  .formButton {
+    line-height: 95px;
+  }
 }
 
 .formButton[disabled],

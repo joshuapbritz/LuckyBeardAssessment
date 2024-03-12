@@ -7,7 +7,7 @@ import { useForm, Controller } from 'react-hook-form';
 import { Skeleton } from '../../components/skeleton/skeleton';
 
 export function RequestDemoPage(): JSX.Element {
-  const { control, handleSubmit, formState } = useForm({ mode: 'onBlur', reValidateMode: 'onBlur' });
+  const { control, handleSubmit, formState, reset } = useForm({ mode: 'onBlur', reValidateMode: 'onBlur' });
   const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
   const [articleData, setArticleData] = useState<{ isLoading: boolean; data?: IArticle[]; error?: string }>({ isLoading: true });
 
@@ -27,7 +27,7 @@ export function RequestDemoPage(): JSX.Element {
     if (response instanceof IErrorResponse || !response) {
       // handle errors here
     } else if (!!response) {
-      // handle success here
+      reset();
     }
 
     setIsSubmitting(false);
@@ -142,14 +142,14 @@ export function RequestDemoPage(): JSX.Element {
             <Controller
               name="role"
               control={control}
-              rules={{ required: 'Please enter a phone number' }}
+              rules={{ required: 'Please select your role' }}
               render={({ field, fieldState }) => {
                 const hasError = !!fieldState.error;
                 const errorMessage = fieldState.error?.message;
 
                 return (
                   <React.Fragment>
-                    <label htmlFor="company" className={classNames('textFieldWrapper', { invalid: hasError, valid: !hasError && fieldState.isDirty })}>
+                    <label htmlFor="role" className={classNames('textFieldWrapper', { invalid: hasError, valid: !hasError && fieldState.isDirty })}>
                       <select {...field} className={classNames({ hasValue: !!field.value })}>
                         {!field.value && <option value="">Select an option</option>}
                         <option value="Developer">Developer</option>
@@ -157,7 +157,7 @@ export function RequestDemoPage(): JSX.Element {
                         <option value="Business Analyst">Business Analyst</option>
                       </select>
 
-                      <span className="textFieldLabel">Company</span>
+                      <span className="textFieldLabel">Role</span>
 
                       <div className="textFieldWrapperArrow">
                         <svg fill="none" viewBox="0 0 25 17">
@@ -214,6 +214,8 @@ export function RequestDemoPage(): JSX.Element {
           </div>
         )}
       </article>
+
+      <div className={styles.blackBar} />
     </div>
   );
 }

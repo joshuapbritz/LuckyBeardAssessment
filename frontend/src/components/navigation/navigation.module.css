@@ -30,6 +30,13 @@
   top: 0;
 }
 
+@media screen and (max-width: 720px) {
+  .navigationWrapper .navigationInner .navigationLogo a {
+    width: 100px;
+    height: 100px;
+  }
+}
+
 .navigationWrapper .navigationInner .navigationLogo a img {
   display: block;
   width: 100%;
@@ -64,6 +71,12 @@
   padding: 0 20px;
   background-color: var(--primary);
   border-radius: 10px;
+}
+
+@media screen and (max-width: 720px) {
+  .navigationWrapper .navigationInner .navigationLinks .navigationLink:not(.navigationButton) {
+    display: none;
+  }
 }
 
 .navigationWrapper.offHome .navigationInner .navigationLogo {

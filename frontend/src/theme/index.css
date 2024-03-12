@@ -16,6 +16,12 @@ body {
   font-style: normal;
 }
 
+@media screen and (max-width: 720px) {
+  :root {
+    font-size: 14px;
+  }
+}
+
 input {
   font-family: 'Poppins', sans-serif;
 }
@@ -30,6 +36,7 @@ input {
   max-width: 885px;
   margin: 0 auto;
   text-align: center;
+  width: 90%;
 }
 
 .headerContent p {

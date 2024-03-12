@@ -7,6 +7,12 @@
   overflow: hidden;
 }
 
+@media screen and (max-width: 720px) {
+  .skeletonWrapper {
+    height: 25px;
+  }
+}
+
 .skeletonWrapper::after {
   content: '';
   display: block;

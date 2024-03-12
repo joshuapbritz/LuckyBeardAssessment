@@ -60,7 +60,7 @@ export function HomePage(): JSX.Element {
       <section className={styles.homeContentWrapper}>
         <div className={styles.homeContentInfoContainer}>
           <div className={styles.homeContentInfoRow}>
-            <div className={classNames(styles.homeContentInfoColumn, styles.homeContentInfoImageColumn)}>
+            <div className={classNames(styles.homeContentInfoColumn, styles.homeContentInfoImageColumn, styles.homeContentInfoImageLeft)}>
               <img src={iphone1} alt="" />
             </div>
 
@@ -96,7 +96,7 @@ export function HomePage(): JSX.Element {
             </div>
           </div>
 
-          <div className={styles.homeContentInfoRow}>
+          <div className={classNames(styles.homeContentInfoRow, styles.homeContentInfoRowInvert)}>
             <div className={styles.homeContentInfoColumn}>
               <h2>Only real people</h2>
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eu sed malesuada habitant odio eu etiam proin odio habitant. Elit felis aliquam suspendisse amet nunc. Erat.</p>
@@ -128,7 +128,7 @@ export function HomePage(): JSX.Element {
               </ul>
             </div>
 
-            <div className={classNames(styles.homeContentInfoColumn, styles.homeContentInfoImageColumn)}>
+            <div className={classNames(styles.homeContentInfoColumn, styles.homeContentInfoImageColumn, styles.homeContentInfoImageRight)}>
               <img src={iphone2} alt="" />
             </div>
           </div>
@@ -224,12 +224,4 @@ export function HomePage(): JSX.Element {
     </React.Fragment>
   );
 }
-
-
-
-
-
-
-
-
 

@@ -7,6 +7,12 @@
   padding-bottom: 100px;
 }
 
+@media screen and (max-width: 720px) {
+  .headerWrapper {
+    padding-bottom: 50px;
+  }
+}
+
 .headerWrapper .headerContent p {
   max-width: 470px;
 }
@@ -39,6 +45,16 @@
   margin-bottom: 95px;
 }
 
+@media screen and (max-width: 720px) {
+  .requestPageContent .requestPageFormWrapper {
+    padding: 45px 25px;
+  }
+
+  .requestPageContent .requestPageFormWrapper h2 {
+    margin-bottom: 45px;
+  }
+}
+
 .requestPageContent .requestPageArticleList {
   appearance: none;
   padding: 121px 0 0 60px;
@@ -53,6 +69,18 @@
   padding-bottom: 5px;
 }
 
+@media screen and (max-width: 720px) {
+  .requestPageContent .requestPageArticleList {
+    appearance: none;
+    padding: 45px 0 0 20px;
+  }
+
+  .requestPageContent .requestPageArticleList li {
+    font-size: 1.5rem;
+    padding-bottom: 10px;
+  }
+}
+
 .requestPageContent .requestPageArticleList li:last-child {
   padding-bottom: 0;
 }
@@ -61,5 +89,11 @@
   text-decoration: underline;
   cursor: pointer;
   color: var(--headings);
+}
+
+.blackBar {
+  height: 140px;
+  width: 100%;
+  background: var(--dark_1);
 }
 

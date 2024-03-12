@@ -1,0 +1,10 @@
+.footerWrapper {
+  height: 75px;
+  text-align: center;
+  background-color: var(--dark_2);
+  color: var(--dark_4);
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
