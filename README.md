@@ -7,10 +7,12 @@
    1. To get the backend up and running, start by opening `CMD` or `Terminal` window in the `backend` folder of the project (ie, `cd ./backend`).
    2. Install the application dependencies using `yarn install`.
    3. Start the server by running `yarn start:dev`.
+   4. _Detailed Backend instructions can be found [here](/backend/README.md)_
 4. **Frontend**
    1. Without closing the terminal where the backend server is running, open a new `CMD` or `Terminal` window in the `frontend` folder of the project (ie, `cd ./frontend`).
    2. Install the application dependencies using `yarn install`.
    3. Start the server by running `yarn start`.
+   4. _Detailed Frontend instructions can be found [here](/backend/README.md)_
 
 ## Unit Tests
 
