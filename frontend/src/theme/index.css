@@ -16,6 +16,10 @@ body {
   font-style: normal;
 }
 
+input {
+  font-family: 'Poppins', sans-serif;
+}
+
 .wrapper {
   width: 90%;
   max-width: 1320px;

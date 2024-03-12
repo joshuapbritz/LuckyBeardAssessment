@@ -1,7 +1,8 @@
 export interface IContactForm {
-  firstName: string;
-  lastName: string;
+  name: string;
+  email: string;
   phoneNumber: string;
   company: string;
   role: string;
 }
+

@@ -1,0 +1,31 @@
+.skeletonWrapper {
+  width: 100%;
+  height: 50px;
+  background-color: var(--background);
+  position: relative;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.skeletonWrapper::after {
+  content: '';
+  display: block;
+  position: absolute;
+  left: -150%;
+  width: 200%;
+  height: 100%;
+  top: 0;
+  background: linear-gradient(to right, transparent 0%, transparent 35%, var(--borders) 50%, transparent 75%, transparent 100%);
+  animation: SlideShine 1000ms linear infinite;
+}
+
+@keyframes SlideShine {
+  from {
+    left: -150%;
+  }
+
+  to {
+    left: 150%;
+  }
+}
+

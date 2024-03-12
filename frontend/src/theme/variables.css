@@ -1,6 +1,6 @@
 :root {
   --headings: #ffffff;
-  --primary: #5a89ea;
+  --primary: hsl(220, 77%, 64%);
   --background: #ffffff;
 
   --dark_1: #030303;
@@ -8,7 +8,12 @@
   --dark_4: #d4d7dd;
   --dark_5: #e9ebef;
 
+  --borders: #e0e0e0;
+
   --overlay: hsla(0, 0%, 0%, 0.4);
-  --shadow: hsla(0, 0%, 0%, 0.25)
+  --shadow: hsla(0, 0%, 0%, 0.25);
+
+  --success: hsl(153, 77%, 64%);
+  --error: hsl(3, 77%, 64%);
 }
 

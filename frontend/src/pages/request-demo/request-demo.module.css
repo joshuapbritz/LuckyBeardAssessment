@@ -16,10 +16,16 @@
 }
 
 .requestPageContent .requestPageFormWrapper,
-.requestPageContent .requestPageArticleList {
+.requestPageContent .requestPageArticleList,
+.requestPageContent .requestPageArticleInfo {
   max-width: 870px;
   margin: 0 auto;
   width: 100%;
+}
+
+.requestPageContent .requestPageArticleInfo {
+  padding-top: 121px;
+  text-align: center;
 }
 
 .requestPageContent .requestPageFormWrapper {
@@ -44,6 +50,11 @@
   line-height: 105%;
   letter-spacing: -1.26px;
   color: var(--headings);
+  padding-bottom: 5px;
+}
+
+.requestPageContent .requestPageArticleList li:last-child {
+  padding-bottom: 0;
 }
 
 .requestPageContent .requestPageArticleList li a {
