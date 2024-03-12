@@ -53,6 +53,9 @@ export function HomePage(): JSX.Element {
       </header>
 
       <article className={styles.homeContentWrapper}></article>
+
+      <div id="forBuyer"></div>
+      <div id="forSeller"></div>
     </React.Fragment>
   );
 }
