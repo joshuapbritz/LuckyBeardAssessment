@@ -15,11 +15,12 @@
    4. _Detailed Frontend instructions can be found [here](/frontend/README.md)_
 
 ## Unit Tests
-
 5. Clear instructions on how to run the unit tests
 
-## Build Philosophy
-6. Reasoning behind why a specific CSS framework was used
+## CSS and Build Philosophy
+Due to the size of this project, being a landing/informational page, I opted to not use a framework. In general, I prefer to do the CSS for a project myself as that gives much more control over the styles for that project. It oftens comes down to a case of investing effort into getting an external library (like Bootstrap or Tailwind) to look how the designs look or investing the same amount of effort into building those things myself.
+
+For this project, I choose to use vanilla CSS with CSS Modules. This means that the styling is being written in a way the browser understands, out of the box. It also means that all the styles are processed and parsed at build time (as opposed to something like styled-components). I am using CSS variables for style variables and for SEO and page performance, I have integrated React-Snap to create a pre-rendered build of the production ready site.
 
 ## Issues Experienced
 7. Any issues experienced as well as solutions put in place
