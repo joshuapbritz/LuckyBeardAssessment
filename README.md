@@ -7,7 +7,7 @@
    1. To get the backend up and running, start by opening `CMD` or `Terminal` window in the `backend` folder of the project (ie, `cd ./backend`).
    2. Install the application dependencies using `yarn install`.
    3. Start the server by running `yarn start:dev`.
-   4. The frontend can be accessed in a deployed environment [here](https://light-capris-lion.cyclic.app/)
+   4. The backend can be accessed in a deployed environment [here](https://light-capris-lion.cyclic.app/)
 4. **Frontend**
    1. Without closing the terminal where the backend server is running, open a new `CMD` or `Terminal` window in the `frontend` folder of the project (ie, `cd ./frontend`).
    2. Install the application dependencies using `yarn install`.
