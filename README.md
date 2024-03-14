@@ -1,6 +1,12 @@
 # The Lucky App
 
 ## Getting Up and Running
+I am using the below app version on my machine:
+-  Node: v20.10.0
+-  NPM: v10.2.3
+-  Yarn: v1.22.19
+
+The steps for running the projects are as follows:
 1. This project was built using `yarn` as the dependency manager. To ensure that the correct packages are installed, please ensure you have `yarn` installed.
 2. The backend and frontend are separated and must be started separately. This was done to avoid muddling together of the two projects and to keep the two codebases more organised.
 3. **Backend**
