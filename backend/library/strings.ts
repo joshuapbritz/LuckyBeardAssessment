@@ -1,6 +1,6 @@
-export function prettify(str: string): string {
-  str = `${str[0].toUpperCase()}${str.substring(1)}`;
+export function prettify(input: string): string {
+  input = `${input[0].toUpperCase()}${input.substring(1)}`;
   const regX = /([A-Z]+[a-z]+)/g;
-  return str.replace(regX, '$& ').trim();
+  return input.replace(regX, '$& ').trim();
 }
 

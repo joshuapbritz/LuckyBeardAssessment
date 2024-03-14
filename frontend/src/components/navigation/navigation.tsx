@@ -1,11 +1,10 @@
 import React, { useEffect } from 'react';
-import { INavigationProps } from './navigation.models';
 import classNames from 'classnames';
 import styles from './navigation.module.css';
 import { NavLink, useLocation } from 'react-router-dom';
 import { PagePath } from '../../enums/page-paths';
 
-export function Navigation(props: INavigationProps): JSX.Element {
+export function Navigation(): JSX.Element {
   const { pathname, search } = useLocation();
 
   const isOnLanding = PagePath.Home === pathname;

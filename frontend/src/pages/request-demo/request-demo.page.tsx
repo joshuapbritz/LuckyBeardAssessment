@@ -41,7 +41,7 @@ export function RequestDemoPage(): JSX.Element {
           <p>If you are a professional, we offer a desktop admin platform, to allow a better and faster management of your whole business</p>
         </div>
       </header>
-      
+
       <article className={classNames('wrapper', styles.requestPageContent)}>
         {!submissionStatus.isSubmitted && (
           <form className={classNames(styles.requestPageFormWrapper)} onSubmit={handleSubmit((values: any) => requestDemo(values))}>
@@ -274,5 +274,4 @@ export function RequestDemoPage(): JSX.Element {
     </div>
   );
 }
-
 

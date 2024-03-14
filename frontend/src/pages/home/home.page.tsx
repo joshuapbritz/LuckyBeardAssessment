@@ -31,17 +31,14 @@ export function HomePage(): JSX.Element {
         <div className={styles.headerCircles}>
           <ScrollArrow />
 
-          {/* Blue Circle */}
           <svg preserveAspectRatio="none" fill="none" viewBox="0 0 1920 273" className={styles.headerCircle}>
             <path fill="var(--primary)" fillRule="evenodd" d="M1934.16 273H-15.155C169.917 110.611 536.948 0 959.5 0c422.55 0 789.58 110.611 974.66 273Z" clipRule="evenodd" />
           </svg>
 
-          {/* Black Circle */}
           <svg preserveAspectRatio="none" fill="none" viewBox="0 0 1920 248" className={styles.headerCircle}>
             <path fill="var(--dark_1)" fillRule="evenodd" d="M1920 209.083V248H0v-39.576C189.486 83.965 548.19 0 959.5 0c412.04 0 771.28 84.261 960.5 209.083Z" clipRule="evenodd" />
           </svg>
 
-          {/* White Circle */}
           <svg preserveAspectRatio="none" fill="none" viewBox="0 0 1920 225" className={styles.headerCircle}>
             <mask id="a" fill="var(--background)">
               <path fillRule="evenodd" d="M1920 139.897V225H0v-85.543C189.486 56.181 548.19 0 959.5 0c412.04 0 771.28 56.38 960.5 139.897Z" clipRule="evenodd" />
