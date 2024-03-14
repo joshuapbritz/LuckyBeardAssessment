@@ -4,10 +4,11 @@
 1. This project was built using `yarn` as the dependency manager. To ensure that the correct packages are installed, please ensure you have `yarn` installed.
 2. The backend and frontend are separated and must be started separately. This was done to avoid muddling together of the two projects and to keep the two codebases more organised.
 3. **Backend**
-   1. To get the backend up and running, start by opening `CMD` or `Terminal` window in the `backend` folder of the project (ie, `cd ./backend`).
-   2. Install the application dependencies using `yarn install`.
-   3. Start the server by running `yarn start:dev`.
-   4. The backend can be accessed in a deployed environment [here](https://light-capris-lion.cyclic.app/)
+   1. To get the backend up and running, start adding the provided `.env` file that was sent to `jared.bouwer@luckybeard.com` into the `backend` folder.
+   2. Open your `CMD` or `Terminal` window in the `backend` folder of the project (ie, `cd ./backend`).
+   3. Install the application dependencies using `yarn install`.
+   4. Start the server by running `yarn start:dev`.
+   5. The backend can be accessed in a deployed environment [here](https://light-capris-lion.cyclic.app/)
 4. **Frontend**
    1. Without closing the terminal where the backend server is running, open a new `CMD` or `Terminal` window in the `frontend` folder of the project (ie, `cd ./frontend`).
    2. Install the application dependencies using `yarn install`.
@@ -15,7 +16,7 @@
    4. The frontend can be accessed in a deployed environment [here](https://lucky-beard-assessment-bay.vercel.app/)
 
 ## Unit Tests
-5. Clear instructions on how to run the unit tests
+I wrote very simple tests for the backend that ensure that the helpers functions on the BE work as expected. As this is a simple informational site, I did not know that much of the stuff needed to be tested with Unit Tests. This might be due to my lack of experience with Unit Testing and what can be done with it, but I felt that the UI being a reflection of what should be built is a good indicator of quality on this particular project. In a real-world application, I would look at maybe integrating something like [percy.io]() for automated visual checking. Because the BE services are tested that, to my mind, ensures enough business logic security. To run the tests, make sure you have completed the steps above for **Getting Up and Running**, and then run `yarn test`.
 
 ## CSS and Build Philosophy
 Due to the size of this project, being a landing/informational page, I opted to not use a framework. In general, I prefer to do the CSS for a project myself as that gives much more control over the styles for that project. It oftens comes down to a case of investing effort into getting an external library (like Bootstrap or Tailwind) to look how the designs look or investing the same amount of effort into building those things myself. For a project of this size, there is less wasted code and wasted effort doing the CSS myself.

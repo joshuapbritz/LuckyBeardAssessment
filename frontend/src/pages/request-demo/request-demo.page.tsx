@@ -41,6 +41,7 @@ export function RequestDemoPage(): JSX.Element {
           <p>If you are a professional, we offer a desktop admin platform, to allow a better and faster management of your whole business</p>
         </div>
       </header>
+      
       <article className={classNames('wrapper', styles.requestPageContent)}>
         {!submissionStatus.isSubmitted && (
           <form className={classNames(styles.requestPageFormWrapper)} onSubmit={handleSubmit((values: any) => requestDemo(values))}>
@@ -189,7 +190,7 @@ export function RequestDemoPage(): JSX.Element {
                   return (
                     <React.Fragment>
                       <label htmlFor="role" className={classNames('textFieldWrapper', { invalid: hasError, valid: !hasError && fieldState.isDirty })}>
-                        <select {...field} className={classNames({ hasValue: !!field.value })}>
+                        <select aria-label="Role" {...field} className={classNames({ hasValue: !!field.value })}>
                           {!field.value && <option value="">Select an option</option>}
                           <option value="Developer">Developer</option>
                           <option value="QA Analyst">QA Analyst</option>
@@ -273,4 +274,5 @@ export function RequestDemoPage(): JSX.Element {
     </div>
   );
 }
+
 

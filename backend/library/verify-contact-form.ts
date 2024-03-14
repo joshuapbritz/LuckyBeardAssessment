@@ -1,12 +1,51 @@
 import { IContactForm } from '../models/contact-form';
-const emailRGX = /(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9]))\.){3}(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9])|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])/gi;
+export const emailRGX = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/gi;
+export const phoneRGX = /^(\+27|[0])\d{9}$/;
+
+export function validate(input: string, dataType: 'text' | 'number' | 'email' | 'phone' | 'list', options?: { validateList?: string[]; required: boolean }) {
+  if (options?.required && !input) return false;
+
+  const inputType = typeof input;
+
+  if ((dataType === 'text' || dataType === 'email') && inputType !== 'string') return false;
+  if (dataType === 'number' && inputType !== 'number') return false;
+
+  if (dataType === 'email') {
+    const matches = !!input.match(emailRGX);
+    if (!matches) return false;
+  }
+
+  if (dataType === 'phone') {
+    const matches = !!input.match(phoneRGX);
+    if (!matches) return false;
+  }
+
+  if (dataType === 'list') {
+    if (!options?.validateList) throw new TypeError('options.validateList is required when doing a list validity check');
+    if (!options.validateList.find(i => i === input)) return false;
+  }
+
+  return true;
+}
 
 export function verifyContactForm(lead: IContactForm): boolean {
   const values = Object.values(lead);
   if (values.some(i => !i)) return false;
 
-  const emailValid = emailRGX.test(lead.email);
-  if (!emailValid) return false
+  const nameValid = validate(lead.name, 'text', { required: true });
+  if (!nameValid) return false;
+
+  const emailValid = validate(lead.email, 'email', { required: true });
+  if (!emailValid) return false;
+
+  const phoneValid = validate(lead.phoneNumber, 'phone', { required: true });
+  if (!phoneValid) return false;
+
+  const companyValid = validate(lead.company, 'text', { required: true });
+  if (!companyValid) return false;
+
+  const roleValid = validate(lead.role, 'list', { required: true, validateList: ['Developer', 'QA Analyst', 'Business Analyst'] });
+  if (!roleValid) return false;
 
   return true;
 }
